@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var pug = require('gulp-pug');
 var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 
 gulp.task('views', function() {
   return gulp.src('src/templates/views/*.pug')
@@ -12,19 +14,13 @@ gulp.task('views', function() {
   .pipe(gulp.dest('build/views/'));
 });
 
-gulp.task('bulma', function() {
-  return gulp.src('node_modules/bulma/bulma.sass')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('build/css/'))
-})
-
 gulp.task('sass', function() {
   return gulp.src('src/sass/**/*.sass')
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest('build/css/'))
 });
 
-gulp.task('run', ['views', 'bulma', 'sass']);
+gulp.task('run', ['views', 'sass']);
 
 gulp.task('watch', function() {
   gulp.watch('src/templates/**/*', ['views']);

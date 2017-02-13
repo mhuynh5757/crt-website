@@ -7,17 +7,19 @@ html
   -var menu = {'home': '/home', 'swag': '/swag'};
   
   head
-    link(rel='stylesheet', href='../css/bulma.css')
     link(rel='stylesheet', href='../css/style.css')
   
   body
-    nav
-      ul
-        each val, key in menu
-          li
+    nav.nav
+      div.container
+        div.nav-left
+          h1.nav-item.title Caltech Robotics Team
+        div.nav-right
+          each val, key in menu
             if key == active
-              a.active(href=val, title=key) #{key}
+              a.nav-item.is-tab.is-active(href=val, title=key)= key
             else
-              a(href=val, title=key) #{key}
-              
+              a.nav-item.is-tab(href=val, title=key)= key
+            
 block content
+  
