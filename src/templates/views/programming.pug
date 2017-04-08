@@ -1,0 +1,21 @@
+extends ../layout
+
+block link
+  -var active = 'Programming';
+
+block content
+  div.container
+    div.row
+      div.col-md-12
+        img.content-image.pull-right(src='../imgs/loganalysis.png', hspace='20', vspace='20')
+        
+        p The programming team’s biggest focus this past Fall and into the coming year has been training and preparing our many new members to be active contributors to the team. In the process, we have been working to upgrade many systems across the software stack.
+        
+        p To begin with, we are re-writing two core architecture components: the interposes communication system and the build system to provide more features, functionality, and robustness. In addition, we are preparing for the new hardware that is planned for the upcoming vehicle. For example, we are currently rewriting our image acquisition and processing pipeline to use a higher frame rate, more intelligent white balance, exposure bracketing, 16-bit depth, and to synchronously poll frames from multiple cameras. All these features will help us best leverage our new stereo, ultra-wide-field-of-view imaging system, which will ultimately allow us to measure the distance to field elements and measure frame-by-frame camera movements. The revised pipeline will also help us detect a wider range of colors underwater, particularly greens. We are working towards building a brand new detector capable of distinguishing the letters on the torpedo task.
+        
+        p In the coming two terms, we hope to finish all these projects, and once everything has come together, test and tune the integrated system to make smooth and reliable.
+        
+        p - Kushal Agarwal (Software Lead)
+
+
+

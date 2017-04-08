@@ -1,0 +1,19 @@
+extends ../layout
+
+block link
+  -var active = 'Electrical';
+
+block content
+  div.container
+    div.row
+      div.col-md-12
+        img.pull-right(src='../imgs/electronics.png', hspace='20', vspace='20')
+        
+        p During the fall term, the electrical subteam focused on helping new members learn the basic skills needed for schematic and PCB design. We held workshops on electrical components, schematic design, PCB design, and soldering. The new members were then assigned small projects to complete to gain experience.
+        
+        p The experienced members worked on designing a new electrical system. We will continue to use a modular approach with functionality split across multiple custom PCBs. This gives us flexibility in making revisions and allows us to easily swap modules in an out if a particular PCB breaks. However, instead of using a CAN bus to manage communication between protocols, we plan on implementing an RS485 bus. The electrical system will also need to drive servos that actuate the new gripper mechanism.
+        p We designed four PCBs to function as part of the new electrical system. The core module will handle communication between the onboard computer and the modules on the RS485 bus, the sensor module will handle incoming sensor data and kill switch status, the solenoids module will actuate solenoids to shoot torpedoes and drop markers, and the servo module will drive the gripper servos. We also started working on the hydrophone module and designed an early prototype of the basic system to receive a heading to the pinger.
+        
+        p This term, the electrical subteam plans on continuing development for the various modules. We will solder components onto the four PCBs we already designed and begin working on the firmware for each module. We also plan on connecting all the modules together on a benchtop and testing the entire electrical system as a whole by the end of the term.
+        
+        p - Frank Zhou (Electrical Lead)

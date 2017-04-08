@@ -1,0 +1,16 @@
+extends ../layout
+
+block link
+  -var active = 'Contact Us';
+  
+block content
+  div.container
+    div.row
+      div.col-md-12.text-center
+        h1 Get in touch with us!
+        a.large-social-media-badge(target='_blank', rel='noopener noreferrer', href='https://www.facebook.com/CaltechRoboticsTeam/')
+          i.fa.fa-facebook-official.fa-5x(aria-hidden='true')
+        a.large-social-media-badge(target='_blank', rel='noopener noreferrer', href='https://twitter.com/CITSubTeam?lang=en')
+          i.fa.fa-twitter.fa-5x(aria-hidden='true')
+        a.large-social-media-badge(target='_blank', rel='noopener noreferrer', href='https://www.youtube.com/user/CaltechRoboticsTeam')
+          i.fa.fa-youtube.fa-5x(aria-hidden='true')
