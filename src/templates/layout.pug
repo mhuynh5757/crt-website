@@ -1,25 +1,58 @@
 doctype html
 
-html
+html(lang='en')
   block link
-    -var active = 'home';
+    -var active = 'Home';
   
-  -var menu = {'home': '/home', 'swag': '/swag'};
+  -var menu = { 'Home': './index.html', 'Vehicle': './vehicle.html', 'Teams': '#', 'Sponsors': './sponsors.html', 'Contact Us': './contact.html' };
+  
+  -var submenu = { 'Teams': { 'Programming': './programming.html', 'Mechanical': './mechanical.html', 'Electrical': './electrical.html' } };
   
   head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Caltech Robotics Team Website
     link(rel='stylesheet', href='../css/style.css')
   
   body
-    nav.nav
+    nav.navbar.navbar-default
       div.container
-        div.nav-left
-          h1.nav-item.title Caltech Robotics Team
-        div.nav-right
-          each val, key in menu
-            if key == active
-              a.nav-item.is-tab.is-active(href=val, title=key)= key
-            else
-              a.nav-item.is-tab(href=val, title=key)= key
-            
+        div.navbar-header
+          button.navbar-toggle.collapsed(data-toggle='collapse',
+          data-target='#navbar-collapse', aria-expanded='false')
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='./index.html') Caltech Robotics Team Website
+        div.collapse.navbar-collapse#navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            each menu_val, menu_key in menu
+              if submenu[menu_key]
+                li.dropdown
+                  a.dropdown-toggle(data-toggle='dropdown', role='button',
+                  aria-haspopup='true', aria-expanded='false') !{menu_key} 
+                    span.caret
+                  ul.dropdown-menu
+                    each sub_val, sub_key in submenu[menu_key]
+                      li(class=(sub_key == active) && 'active')
+                        a(href=sub_val)= sub_key
+              else
+                li(class=(menu_key == active) && 'active')
+                  a(href=menu_val)= menu_key
+
 block content
-  
+
+div.container
+  hr
+  div.pull-right.footer
+    a.social-media-badge(target='_blank', rel='noopener noreferrer', href='https://www.facebook.com/CaltechRoboticsTeam/')
+      i.fa.fa-facebook-official(aria-hidden='true')
+    a.social-media-badge(target='_blank', rel='noopener noreferrer', href='https://twitter.com/CITSubTeam?lang=en')
+      i.fa.fa-twitter(aria-hidden='true')
+    a.social-media-badge(target='_blank', rel='noopener noreferrer', href='https://www.youtube.com/user/CaltechRoboticsTeam')
+      i.fa.fa-youtube(aria-hidden='true')
+
+script(src='../js/jquery.min.js')
+script(src='../js/bootstrap.min.js')
