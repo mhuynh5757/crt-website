@@ -22,6 +22,9 @@ gulp.task('sass', function() {
 });
 
 gulp.task('copy', function() {
+  gulp.src('src/imgs/*')
+  .pipe(gulp.dest('build/imgs/'));
+  
   gulp.src('node_modules/jquery/dist/jquery.min.js')
   .pipe(gulp.dest('build/js/'));
   gulp.src('node_modules/jquery/dist/jquery.min.map')
