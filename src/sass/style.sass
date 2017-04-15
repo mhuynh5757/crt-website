@@ -3,12 +3,26 @@ $brand-primary: #FF6E1E
 $navbar-default-link-color: white
 $navbar-default-link-active-color: $navbar-default-link-color
 $navbar-default-bg: $brand-primary
+$navbar-crt-font: "Lato", sans-serif
+$navbar-crt-fontsize: 20px
+$body-crt-font: "Open Sans", sans-serif
+$body-crt-fontsize: 14px
 
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 @import '../../node_modules/font-awesome/scss/font-awesome.scss'
 
-.navbar
+.body
+    margin: 0px
+    padding: 0px
+    font: $body-crt-fontsize $body-crt-font
+
+.carousel-control.left, .carousel-control.right
+    background-image: none
+
+.navbar-crt *
   border-radius: 0
+  font: $navbar-crt-fontsize $navbar-crt-font
+  text-transform: uppercase
 
 .footer
   padding-bottom: 1em

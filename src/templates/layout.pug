@@ -2,9 +2,8 @@ doctype html
 
 html(lang='en')
   block link
-    -var active = 'Home';
   
-  -var menu = { 'Home': './index.html', 'Vehicle': './vehicle.html', 'Teams': '#', 'Sponsors': './sponsors.html', 'Contact Us': './contact.html' };
+  -var menu = { 'Vehicles': './vehicle.html', 'Sponsors': './sponsors.html', 'Photos': '/.photos.html' };
   
   -var submenu = { 'Teams': { 'Programming': './programming.html', 'Mechanical': './mechanical.html', 'Electrical': './electrical.html' } };
   
@@ -12,11 +11,17 @@ html(lang='en')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    title Caltech Robotics Team Website
+    title Caltech Robotics Team
+
+    // Fonts
+    link( href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet")
+    link( href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+    // Styles
     link(rel='stylesheet', href='../css/style.css')
   
   body
-    nav.navbar.navbar-default
+    //nav.navbar.navbar-default.navbar-crt
+    nav.navbar-crt.navbar-default.navbar-static-top
       div.container
         div.navbar-header
           button.navbar-toggle.collapsed(data-toggle='collapse',
@@ -25,7 +30,7 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='./index.html') Caltech Robotics Team Website
+          a.navbar-brand(href='./index.html') Caltech Robotics Team
         div.collapse.navbar-collapse#navbar-collapse
           ul.nav.navbar-nav.navbar-right
             each menu_val, menu_key in menu
